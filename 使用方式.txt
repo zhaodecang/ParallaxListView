@@ -1,0 +1,20 @@
+﻿<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.zdc.parallaxlayout.MainActivity" >
+    <com.zdc.parallaxlayout.view.QuickIndexListView
+        android:id="@+id/lv_names"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</RelativeLayout>
+
+
+private void initData() {
+	listView = (QuickIndexListView) findViewById(R.id.lv_names);
+	listView.setAdapter();
+	View view = View.inflate(this, R.layout.parallax_item, null);
+	ImageView parallaxView = (ImageView) view.findViewById(R.id.iv_parallax);
+	listView.addHeaderView(view);
+	listView.setParallaxView(parallaxView);
+}
